@@ -5,7 +5,9 @@ interface SearchResultsProps {
   results: Array<Product>;
 }
 
-export function SearchResults({ results }: SearchResultsProps) {
+const SearchResultsReact: React.FC<SearchResultsProps> = ({
+  results,
+}: SearchResultsProps) => {
   return (
     <div>
       {results.map((product) => {
@@ -13,4 +15,6 @@ export function SearchResults({ results }: SearchResultsProps) {
       })}
     </div>
   );
-}
+};
+
+export default SearchResultsReact;

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { FormEvent, useState } from 'react';
-import { SearchResults } from '../components/SearchResults';
+import SearchResults from '../components/SearchResults';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
