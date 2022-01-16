@@ -1,6 +1,6 @@
+import { FormEvent, useCallback, useState } from 'react';
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import { FormEvent, useState } from 'react';
+
 import SearchResults from '../components/SearchResults';
 import styles from '../styles/Home.module.css';
 
@@ -21,6 +21,10 @@ const Home: NextPage = () => {
     setResults(data);
   }
 
+  const addToWishlist = useCallback(async (id: number) => {
+    console.log(id);
+  }, []);
+
   return (
     <div className={styles.container}>
       <main>
@@ -39,7 +43,10 @@ const Home: NextPage = () => {
         </form>
 
         <div>
-          <SearchResults results={results}></SearchResults>
+          <SearchResults
+            results={results}
+            onAddToWishlist={addToWishlist}
+          ></SearchResults>
         </div>
       </main>
     </div>
