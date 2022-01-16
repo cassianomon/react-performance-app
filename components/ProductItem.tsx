@@ -4,9 +4,14 @@ import dynamic from 'next/dynamic';
 import Product from '../interfaces/Product';
 import { AddToWishlistProps } from './AddToWishlist';
 
-const AddToWishlist = dynamic<AddToWishlistProps>(async () => {
-  return import('./AddToWishlist').then((mod) => mod.AddToWishlist);
-});
+const AddToWishlist = dynamic<AddToWishlistProps>(
+  async () => {
+    return import('./AddToWishlist').then((mod) => mod.AddToWishlist);
+  },
+  {
+    loading: () => <span>Loading...</span>,
+  }
+);
 
 interface ProductItemProps {
   product: Product;
