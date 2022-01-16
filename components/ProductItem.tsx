@@ -12,7 +12,7 @@ const ProductItemComponent: React.FC<ProductItemProps> = ({
 }: ProductItemProps) => {
   return (
     <div>
-      {product.title} - <strong>{product.price}</strong>
+      {product.title} - <strong>{product.priceFormatted}</strong>
       <button onClick={() => onAddToWishlist(product.id)}>{'<3'}</button>
     </div>
   );
