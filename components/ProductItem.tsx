@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 
 import Product from '../interfaces/Product';
 import { AddToWishlistProps } from './AddToWishlist';
+import { isEqual } from 'lodash';
 
 const AddToWishlist = dynamic<AddToWishlistProps>(
   async () => {
@@ -38,7 +39,7 @@ const ProductItemComponent: React.FC<ProductItemProps> = ({
 };
 
 const ProductItem = memo(ProductItemComponent, (prevProps, nextProps) => {
-  return Object.is(prevProps.product, nextProps.product);
+  return isEqual(prevProps.product, nextProps.product);
 });
 
 export default ProductItem;

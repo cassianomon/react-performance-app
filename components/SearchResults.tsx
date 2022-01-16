@@ -1,7 +1,5 @@
 import { List, ListRowRenderer } from 'react-virtualized';
 
-import { useMemo } from 'react';
-
 import Product from '../interfaces/Product';
 import ProductItem from './ProductItem';
 
@@ -38,15 +36,6 @@ const SearchResultsReact: React.FC<SearchResultsProps> = ({
         rowCount={results.length}
         rowRenderer={rowRenderer}
       />
-      {/* {results.map((product) => {
-        return (
-          <ProductItem
-            key={product.id}
-            product={product}
-            onAddToWishlist={onAddToWishlist}
-          ></ProductItem>
-        );
-      })} */}
     </div>
   );
 };

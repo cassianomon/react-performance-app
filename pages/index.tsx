@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useMemo, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import type { NextPage } from 'next';
 
 import SearchResults from '../components/SearchResults';
